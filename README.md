@@ -94,19 +94,31 @@ it (should) always do a dry run first, showing what would be removed, and requir
 - evaluation before suggesting removal
 
 ## project tree structure
-.
-├── LICENSE
-├── README.md
-├── pyproject.toml      
-├── uv-tidy
-│   └── __init__.py
-│   └── cli.py
-│   └── core.py
-│   └── rules.py
-│   └── utils.py
-├── tests/
-│   ├── __init__.py
-│   └── test_cli.py
+```
+uv-tidy/
+├── pyproject.toml         # Project metadata and dependencies
+├── README.md              # Project documentation
+├── run_tests.sh           # Helper script to run tests
+├── uv_tidy/               # Main package directory
+│   ├── __init__.py        # Package initialization
+│   ├── cli.py             # Command-line interface
+│   ├── core.py            # Core functionality
+│   ├── rules.py           # Criteria and rules
+│   └── utils.py           # Utility functions
+└── tests/                 # Test directory
+    ├── conftest.py        # Common test fixtures and configuration
+    ├── test_cli.py        # CLI tests
+    ├── test_core.py       # Core functionality tests
+    ├── test_rules.py      # Rules tests
+    ├── test_utils.py      # Utility function tests
+    └── fixtures/          # Additional test fixtures
+        ├── __init__.py    # Make fixtures importable
+        ├── mock_venvs.py  # More advanced venv mocking utilities
+        ├── sample_data/   # Sample data directory
+        │   ├── large_venv_structure.json  # Sample complex venv structure
+        │   └── custom_configs/            # Test configuration files
+        └── helpers.py     # Additional test helper functions
+```
 
 ## License
 

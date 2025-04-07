@@ -1,0 +1,128 @@
+{
+    "venvs": [
+      {
+        "name": "django-webapp",
+        "age_days": 75,
+        "is_active": true,
+        "size_kb": 12000,
+        "packages": [
+          "django",
+          "gunicorn",
+          "psycopg2-binary",
+          "requests",
+          "celery",
+          "redis",
+          "pillow",
+          "django-debug-toolbar"
+        ],
+        "has_git": true,
+        "has_uncommitted_changes": true,
+        "custom_files": {
+          ".env": "DATABASE_URL=postgresql://user:pass@localhost/db\nDEBUG=True",
+          "requirements.txt": "django==4.2.0\ngunicorn==20.1.0\npsycopg2-binary==2.9.5\nrequests==2.28.2\ncelery==5.2.7\nredis==4.5.4\npillow==9.5.0\ndjango-debug-toolbar==3.8.1",
+          "manage.py": "#!/usr/bin/env python\nimport os\nimport sys\n\ndef main():\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError() from exc\n    execute_from_command_line(sys.argv)\n\nif __name__ == '__main__':\n    main()"
+        },
+        "access_pattern": "regular"
+      },
+      {
+        "name": "data-science-project",
+        "age_days": 120,
+        "is_active": false,
+        "size_kb": 25000,
+        "packages": [
+          "numpy",
+          "pandas",
+          "scikit-learn",
+          "matplotlib",
+          "jupyter",
+          "tensorflow",
+          "torch",
+          "transformers",
+          "seaborn",
+          "plotly"
+        ],
+        "has_git": true,
+        "has_uncommitted_changes": false,
+        "custom_files": {
+          "notebooks/analysis.ipynb": "{\n  \"cells\": [\n    {\n      \"cell_type\": \"markdown\",\n      \"metadata\": {},\n      \"source\": [\"# Data Analysis Notebook\"]\n    },\n    {\n      \"cell_type\": \"code\",\n      \"execution_count\": null,\n      \"metadata\": {},\n      \"outputs\": [],\n      \"source\": [\"import numpy as np\\nimport pandas as pd\\nimport matplotlib.pyplot as plt\"]\n    }\n  ],\n  \"metadata\": {\n    \"kernelspec\": {\n      \"display_name\": \"Python 3\",\n      \"language\": \"python\",\n      \"name\": \"python3\"\n    }\n  },\n  \"nbformat\": 4,\n  \"nbformat_minor\": 5\n}"
+        },
+        "access_pattern": "abandoned"
+      },
+      {
+        "name": "api-service",
+        "age_days": 45,
+        "is_active": true,
+        "size_kb": 8000,
+        "packages": [
+          "fastapi",
+          "uvicorn",
+          "sqlalchemy",
+          "pydantic",
+          "alembic",
+          "pytest",
+          "httpx",
+          "psycopg2-binary"
+        ],
+        "has_git": true,
+        "has_uncommitted_changes": false,
+        "custom_files": {
+          "main.py": "from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get('/')\ndef read_root():\n    return {'Hello': 'World'}\n",
+          "tests/test_api.py": "from fastapi.testclient import TestClient\nfrom main import app\n\nclient = TestClient(app)\n\ndef test_read_root():\n    response = client.get('/')\n    assert response.status_code == 200\n    assert response.json() == {'Hello': 'World'}\n"
+        },
+        "access_pattern": "sporadic"
+      },
+      {
+        "name": "legacy-project",
+        "age_days": 365,
+        "is_active": false,
+        "size_kb": 3000,
+        "packages": [
+          "flask",
+          "sqlalchemy",
+          "werkzeug",
+          "jinja2",
+          "itsdangerous"
+        ],
+        "has_git": false,
+        "custom_files": {},
+        "access_pattern": "abandoned"
+      },
+      {
+        "name": "test-environment",
+        "age_days": 3,
+        "is_active": true,
+        "size_kb": 500,
+        "packages": [
+          "pytest",
+          "pytest-cov",
+          "pytest-mock"
+        ],
+        "has_git": false,
+        "custom_files": {},
+        "access_pattern": "recent_only"
+      },
+      {
+        "name": "corrupted-environment",
+        "age_days": 90,
+        "is_active": false,
+        "size_kb": 2000,
+        "packages": [
+          "requests",
+          "beautifulsoup4"
+        ],
+        "is_corrupted": true,
+        "corruption_type": "missing_python",
+        "access_pattern": "abandoned"
+      },
+      {
+        "name": "nearly-empty-venv",
+        "age_days": 15,
+        "is_active": false,
+        "size_kb": 200,
+        "packages": [],
+        "has_git": false,
+        "custom_files": {},
+        "access_pattern": "abandoned"
+      }
+    ]
+  }

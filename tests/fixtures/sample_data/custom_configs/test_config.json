@@ -1,0 +1,18 @@
+{
+    "criteria": {
+      "min_age_days": 60,
+      "min_size_mb": 5,
+      "unused_only": true
+    },
+    "exclude_patterns": [
+      "*-test*",
+      "*temp*",
+      "*/project/*"
+    ],
+    "custom_venv_dirs": [
+      "~/custom_venvs",
+      "~/projects/.venvs"
+    ],
+    "sort_by": "size",
+    "limit": 3
+  }
