@@ -2,6 +2,8 @@
 
 a simple CLI tool to query, identify, and clean up unused uv virtual environments on linux and macOS (maybe more, but tested on these)
 
+![image](https://github.com/user-attachments/assets/d3202b44-8da5-4080-9dfa-c0aec8ae113a)
+
 ## Features
 
 - detects uv virtual environments in standard locations
